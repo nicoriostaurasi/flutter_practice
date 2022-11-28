@@ -15,11 +15,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
         accentColor: Colors.amber,
         fontFamily: 'Quicksand',
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
+            fontFamily: 'OpenSans',
             fontWeight: FontWeight.bold,
             fontSize: 25,
-            fontFamily: 'OpenSans',
           ),
         ),
       ),

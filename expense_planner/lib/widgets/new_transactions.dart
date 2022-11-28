@@ -56,9 +56,37 @@ class _NewTransactionState extends State<NewTransaction> {
               //  amountInput = val;
               //},
             ),
+            Container(
+              height: 70,
+              child: Row(
+                children: <Widget>[
+                  Text('No Date choosen!'),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                        foregroundColor: Theme.of(context).primaryColor),
+                    onPressed: () {},
+                    child: Text(
+                      'Choose Date',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
             TextButton(
-              style: TextButton.styleFrom(primary: Colors.purple),
-              child: Text('Add Transaction'),
+              style: TextButton.styleFrom(
+                  foregroundColor: Theme.of(context).primaryColor,
+                  backgroundColor: Theme.of(context).primaryColor),
+              child: Text(
+                'Add Transaction',
+                style: TextStyle(
+//                  color: Theme.of(context).textButtonTheme.style.overlayColor,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               onPressed: submitData,
             ),
           ],
