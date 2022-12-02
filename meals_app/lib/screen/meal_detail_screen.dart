@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:meals_app/dummy_data.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -7,6 +5,10 @@ import 'package:flutter/src/widgets/framework.dart';
 
 class MetalDetailScreen extends StatelessWidget {
   static const routeName = "/metal-detail";
+  final Function? toggleFavorite;
+  final Function isFavorite;
+
+  MetalDetailScreen(this.toggleFavorite, this.isFavorite);
 
   Widget buildSectionTitle(BuildContext context, String text) {
     return Container(
@@ -101,11 +103,9 @@ class MetalDetailScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(
-          Icons.delete,
+          isFavorite(mealId) ? Icons.star : Icons.star_border,
         ),
-        onPressed: () {
-          Navigator.of(context).pop(mealId);
-        },
+        onPressed: () => toggleFavorite!(mealId),
       ),
     );
   }
